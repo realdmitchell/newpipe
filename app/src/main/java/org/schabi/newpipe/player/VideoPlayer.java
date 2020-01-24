@@ -98,8 +98,8 @@ public abstract class VideoPlayer extends BasePlayer
     //////////////////////////////////////////////////////////////////////////*/
 
     protected static final int RENDERER_UNAVAILABLE = -1;
-    public static final int DEFAULT_CONTROLS_DURATION = 30; // 300 millis
-    public static final int DEFAULT_CONTROLS_HIDE_TIME = 200;  // 2 Seconds
+    public static final int DEFAULT_CONTROLS_DURATION = 200; // 300 millis
+    public static final int DEFAULT_CONTROLS_HIDE_TIME = 1000;  // 2 Seconds
 
     private List<VideoStream> availableStreams;
     private int selectedStreamIndex;
