@@ -98,8 +98,8 @@ public abstract class VideoPlayer extends BasePlayer
     //////////////////////////////////////////////////////////////////////////*/
 
     protected static final int RENDERER_UNAVAILABLE = -1;
-    public static final int DEFAULT_CONTROLS_DURATION = 300; // 300 millis
-    public static final int DEFAULT_CONTROLS_HIDE_TIME = 2000;  // 2 Seconds
+    public static final int DEFAULT_CONTROLS_DURATION = 30; // 300 millis
+    public static final int DEFAULT_CONTROLS_HIDE_TIME = 200;  // 2 Seconds
 
     private List<VideoStream> availableStreams;
     private int selectedStreamIndex;
@@ -478,7 +478,7 @@ public abstract class VideoPlayer extends BasePlayer
         super.onCompleted();
 
         showControls(500);
-        animateView(endScreen, true, 800);
+        animateView(endScreen, true, 500);
         animateView(currentDisplaySeek, AnimationUtils.Type.SCALE_AND_ALPHA, false, 200);
         loadingPanel.setVisibility(View.GONE);
 
