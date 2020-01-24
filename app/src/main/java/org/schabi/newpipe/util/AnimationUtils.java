@@ -36,7 +36,7 @@ import org.schabi.newpipe.MainActivity;
 
 public class AnimationUtils {
     private static final String TAG = "AnimationUtils";
-    private static final boolean DEBUG = MainActivity.DEBUG;
+    private static final boolean DEBUG = false;
 
     public enum Type {
         ALPHA,
@@ -85,7 +85,7 @@ public class AnimationUtils {
 
             String msg = String.format("%8s →  [%s:%s] [%s %s:%s] execOnEnd=%s",
                     enterOrExit, view.getClass().getSimpleName(), id, animationType, duration, delay, execOnEnd);
-            Log.d(TAG, "animateView()" + msg);
+            Log.d(TAG, "88 animateView()" + msg);
         }
 
         if (view.getVisibility() == View.VISIBLE && enterOrExit) {
@@ -96,7 +96,7 @@ public class AnimationUtils {
             if (execOnEnd != null) execOnEnd.run();
             return;
         } else if ((view.getVisibility() == View.GONE || view.getVisibility() == View.INVISIBLE) && !enterOrExit) {
-            if (DEBUG) Log.d(TAG, "animateView() view was already gone > view = [" + view + "]");
+            if (DEBUG) Log.d(TAG, "99 animateView() view was already gone > view = [" + view + "]");
             view.animate().setListener(null).cancel();
             view.setVisibility(View.GONE);
             view.setAlpha(0f);
@@ -132,7 +132,7 @@ public class AnimationUtils {
      */
     public static void animateBackgroundColor(final View view, long duration, @ColorInt final int colorStart, @ColorInt final int colorEnd) {
         if (DEBUG) {
-            Log.d(TAG, "animateBackgroundColor() called with: view = [" + view + "], duration = [" + duration + "], colorStart = [" + colorStart + "], colorEnd = [" + colorEnd + "]");
+            Log.d(TAG, "135 animateBackgroundColor() called with: view = [" + view + "], duration = [" + duration + "], colorStart = [" + colorStart + "], colorEnd = [" + colorEnd + "]");
         }
 
         final int[][] EMPTY = new int[][]{new int[0]};
@@ -164,7 +164,7 @@ public class AnimationUtils {
      */
     public static void animateTextColor(final TextView view, long duration, @ColorInt final int colorStart, @ColorInt final int colorEnd) {
         if (DEBUG) {
-            Log.d(TAG, "animateTextColor() called with: view = [" + view + "], duration = [" + duration + "], colorStart = [" + colorStart + "], colorEnd = [" + colorEnd + "]");
+            Log.d(TAG, "167 animateTextColor() called with: view = [" + view + "], duration = [" + duration + "], colorStart = [" + colorStart + "], colorEnd = [" + colorEnd + "]");
         }
 
         ValueAnimator viewPropertyAnimator = ValueAnimator.ofObject(new ArgbEvaluator(), colorStart, colorEnd);
@@ -193,7 +193,7 @@ public class AnimationUtils {
     public static ValueAnimator animateHeight(final View view, long duration, int targetHeight) {
         final int height = view.getHeight();
         if (DEBUG) {
-            Log.d(TAG, "animateHeight: duration = [" + duration + "], from " + height + " to → " + targetHeight + " in: " + view);
+            Log.d(TAG, "196 animateHeight: duration = [" + duration + "], from " + height + " to → " + targetHeight + " in: " + view);
         }
 
         ValueAnimator animator = ValueAnimator.ofFloat(height, targetHeight);
@@ -224,7 +224,7 @@ public class AnimationUtils {
 
     public static void animateRotation(final View view, long duration, int targetRotation) {
         if (DEBUG) {
-            Log.d(TAG, "animateRotation: duration = [" + duration + "], from " + view.getRotation() + " to → " + targetRotation + " in: " + view);
+            Log.d(TAG, "227 animateRotation: duration = [" + duration + "], from " + view.getRotation() + " to → " + targetRotation + " in: " + view);
         }
         view.animate().setListener(null).cancel();
 
@@ -256,7 +256,7 @@ public class AnimationUtils {
                 }
             }).start();
         } else {
-            view.animate().setInterpolator(new FastOutSlowInInterpolator()).alpha(0f)
+            view.animate().setInterpolator(new FastOutSlowInInterpolator()).alpha(1f)
                     .setDuration(duration).setStartDelay(delay).setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {

@@ -90,7 +90,7 @@ public abstract class VideoPlayer extends BasePlayer
         Player.EventListener,
         PopupMenu.OnMenuItemClickListener,
         PopupMenu.OnDismissListener {
-    public static final boolean DEBUG = BasePlayer.DEBUG;
+    public static final boolean DEBUG = false;
     public final String TAG;
 
     /*//////////////////////////////////////////////////////////////////////////
